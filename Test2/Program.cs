@@ -1,19 +1,28 @@
-﻿
+﻿using System;
 
-Console.WriteLine("Введите ФИО: ");
+class Program
+{ 
+    static void Main()
+    {
 
-string fullName = Console.ReadLine();
+        Console.WriteLine("Введите ФИО: ");
 
-string[] names = fullName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        string fullName = Console.ReadLine();
+
+        string[] names = fullName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
 
-ConsoleColor[] colors = { ConsoleColor.DarkBlue, ConsoleColor.Cyan, ConsoleColor.Green };
+        ConsoleColor[] colors = { ConsoleColor.DarkBlue, ConsoleColor.Cyan, ConsoleColor.Green };
 
-Console.WriteLine("\nФИО в разных цветах: ");
+        Console.WriteLine("\nФИО в разных цветах: ");
 
-for (int i = 0; i < names.Length; i++)
-{
-    Console.ForegroundColor = colors[i% colors.Length];
+        for (int i = 0; i < names.Length; i++)
+        {
+            Console.ForegroundColor = colors[i% colors.Length];
     
-    Console.WriteLine(names[i] + " ");
+            Console.WriteLine(names[i] + " ");
+        }
+        Console.ResetColor();
+        Console.WriteLine();
+    }
 }
